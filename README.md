@@ -33,7 +33,7 @@ Para rodar esse projeto, use localmente npm:
 $ git clone https://github.com/carolineccorrea/carrental-api.git
 $ cd carrental-api
 $ yarn
-$ npm start
+$ yarn start
 ```
 ---
 
