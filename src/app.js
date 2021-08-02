@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const passport = require('passport');
+const bodyParser = require('body-parser'); 
 
 class App {
 
@@ -20,10 +21,8 @@ class App {
   middlewares() {
     this.server.use(express.json());
     this.server.use(cookieParser());
-    app.use(express.session({
-      secret: 'keyboard cat',
-      resave: true,
-      saveUnitialized: true
+    this.server.use(express.session({
+      secret: 'keyboard cat'
     }));
     this.server.use(passport.initialize());
     this.server.use(passport.session());
