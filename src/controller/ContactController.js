@@ -1,14 +1,13 @@
 import Contact from "../model/Contact";
 
 class ContactController {
-Contac
     async store(req, res) {
         const { email, name, message } = req.body;
-        const newUser = {
+        const newContact = {
             name: req.user._id,
             message: req.body.message
         }
-        let cont = await Contact.create(newUser)
+        let cont = await Contact.create(newContact)
         return res.json(cont)
 
     }
