@@ -1,8 +1,14 @@
-const { Router } = require('express');
-const { default: ContactController } = require('./controller/ContactController');
+import { Router } from 'express';
+import bcrypt from 'bcrypt';
+import User from './app/model/User';
+import UserController from './app/controller/UserController';
 
 const routes = new Router();
 
-routes.post('/contact', ContactController.store);
+routes.get('/teste', (req, res) => {
+  return res.json({ ok: true });
+});
 
-module.exports = routes;
+routes.post('/user',UserController.store)
+
+export default routes;

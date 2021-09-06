@@ -13,15 +13,12 @@ class UserController {
                 email: req.body.email,
                 password: hash
             }
-            new User.save(newUser)
-            if (newUser) {
-                console.log("ok")
-            }
+            const data = await User.create(newUser);
+            return res.json(data);
 
         } catch (err) {
             console.log(err)
         }
-
     }
 
 }
